@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         rvListaPlatillos = findViewById(R.id.rvListaPlatillos)
         imprimirBoton = findViewById(R.id.btnImprimir)
         val adapter = PlatillosAdapter(PlatillosProvider.listaPlatillos)
