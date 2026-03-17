@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!--APP CAFETERIA COLORS-->
+    <color name="background_app">#EBD5AB</color>
+    <color name="background_header">#628141</color>
+    <color name="buttons">#90AB8B</color>
+    <color name="fonts">#FCF9EA</color>
+    <color name="images_background_test">#91C6BC</color>
+</resources>

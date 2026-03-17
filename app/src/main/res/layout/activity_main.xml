@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_app"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Cafeteria Conalep"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lista menu:"
+        android:textSize="26sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListaPlatillos"
+        android:layout_width="match_parent"
+        android:layout_height="350dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+
+    <Button
+        android:id="@+id/btnImprimir"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/buttons"
+        android:text="Imprimir ticket" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/buttons"
+        android:text="Apartados" />
+
+</LinearLayout>
