@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     lateinit var rvListaPlatillos: RecyclerView
-    //Comentario para validar conexion en github y el commit
     lateinit var imprimirBoton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -5,29 +5,36 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/background_app"
+    android:orientation="vertical"
     tools:context=".ApartadosActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Lista de apartados"
         android:textSize="26sp"
-        android:textStyle="bold"
-        android:text="Lista de apartados" />
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListaApartados"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
-        android:layout_width="match_parent"
-        android:text="Agregar apartado"
-        android:layout_height="wrap_content" />
+        android:id="@+id/btnAgregarApartado"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/buttons"
+        android:text="Agregar apartado" />
 
     <Button
-        android:layout_width="match_parent"
-        android:text="Volver a inicio"
-        android:layout_height="wrap_content" />
+        android:id="@+id/btnVolverInicio"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/buttons"
+        android:text="Volver a inicio" />
 
 </LinearLayout>
