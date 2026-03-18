@@ -2,5 +2,6 @@ package com.example.cafeteriaconalep
 
 data class Apartados(
     val nombreApartado: String,
-    val nombrePlatilloApartado: String
+    val nombrePlatilloApartado: String,
+    var seleccionado: Boolean
 )
