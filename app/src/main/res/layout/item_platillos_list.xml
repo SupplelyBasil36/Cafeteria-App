@@ -30,7 +30,8 @@
                 android:id="@+id/txtPlatillo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nombre platillo" />
+                android:text="Nombre platillo"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtPrecio"
