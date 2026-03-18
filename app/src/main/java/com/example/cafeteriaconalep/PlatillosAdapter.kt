@@ -25,8 +25,8 @@ class PlatillosAdapter(private val listaPlatillos: List<Platillos>) :
         return listaPlatillos.size
     }
 
-    fun obtenerSeleccionados(): List<Platillos> {
-        val seleccionados = listaPlatillos.filter { it.seleccionado }
+    fun obtenerSeleccionados(): List<String> {
+        val seleccionados = listaPlatillos.filter { it.seleccionado }.map { it.nombrePlatillo }
         return seleccionados
     }
 }

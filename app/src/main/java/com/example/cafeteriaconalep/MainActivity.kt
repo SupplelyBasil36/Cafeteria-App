@@ -25,7 +25,8 @@ class MainActivity : AppCompatActivity() {
         rvListaPlatillos.adapter = adapter
 
         imprimirBoton.setOnClickListener {
-            println(adapter.obtenerSeleccionados())
+            val datos = adapter.obtenerSeleccionados()
+            println(datos.toString())
         }
 
         apartadosBoton.setOnClickListener {
