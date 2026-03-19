@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         imprimirBoton.setOnClickListener {
             val datos = adapter.obtenerSeleccionados()
-            
+            println(datos)
         }
 
         apartadosBoton.setOnClickListener {
