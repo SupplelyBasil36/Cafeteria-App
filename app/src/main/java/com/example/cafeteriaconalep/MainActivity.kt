@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         imprimirBoton.setOnClickListener {
             val datos = adapter.obtenerSeleccionados()
             println(datos)
+            //Esto funciona para agregar un platillo a la lista
+            //PlatillosProvider.listaPlatillos.add(Platillos("Agregado extra", 55, false))
+            //adapter.notifyDataSetChanged()
         }
 
         apartadosBoton.setOnClickListener {

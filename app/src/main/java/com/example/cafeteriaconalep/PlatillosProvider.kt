@@ -2,7 +2,7 @@ package com.example.cafeteriaconalep
 
 class PlatillosProvider {
     companion object {
-        val listaPlatillos = listOf(
+        val listaPlatillos = mutableListOf(
             Platillos("Hamburguesa", 55, false),
             Platillos("Hot Dog", 30, false),
             Platillos("Tacos", 45, false),

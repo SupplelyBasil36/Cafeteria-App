@@ -13,7 +13,6 @@ class ApartadosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_apartados)
-
         rvApartados = findViewById(R.id.rvListaApartados)
         val adapter = ApartadosAdapter(ApartadosProvider.listaApartados)
         rvApartados.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
