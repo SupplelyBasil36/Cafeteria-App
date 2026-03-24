@@ -3,6 +3,7 @@ package com.example.cafeteriaconalep
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,6 +28,16 @@ class MainActivity : AppCompatActivity() {
         imprimirBoton.setOnClickListener {
             val datos = adapter.obtenerSeleccionados()
             println(datos)
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Imprimir")
+            builder.setMessage("La lista se esta imprimiendo")
+            builder.setPositiveButton("Aceptar") { dialog, which ->
+                // Acción al presionar Aceptar (puede estar vacía)
+            }
+            builder.setNegativeButton("Cancelar") { dialog, which ->
+                // Acción al presionar Cancelar
+            }
+            builder.show()
             //Esto funciona para agregar un platillo a la lista
             //PlatillosProvider.listaPlatillos.add(Platillos("Agregado extra", 55, false))
             //adapter.notifyDataSetChanged()

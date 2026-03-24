@@ -2,9 +2,10 @@ package com.example.cafeteriaconalep
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 
-class ApartadosAdapter(private val listaApartados: List<Apartados>) :
+class ApartadosAdapter(private val listaApartados: MutableList<Apartados>) :
     RecyclerView.Adapter<ApartadosViewHolder>() {
     override fun onCreateViewHolder(
         p0: ViewGroup,
@@ -25,7 +26,11 @@ class ApartadosAdapter(private val listaApartados: List<Apartados>) :
         p0.apartadoCheck.isChecked = data.seleccionado
 
         p0.apartadoCheck.setOnCheckedChangeListener { _, isChecked ->
-            data.seleccionado = isChecked
+            if (isChecked) {
+                val context = p0.itemView.context
+                val build = AlertDialog.Builder(context)
+
+            }
         }
     }
 

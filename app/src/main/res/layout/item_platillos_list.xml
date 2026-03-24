@@ -14,11 +14,11 @@
         android:orientation="horizontal"
         android:padding="12dp">
 
-        <View
+        <ImageView
             android:id="@+id/imgPlatillo"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@color/background_app"
+            android:background="@drawable/ic_launcher_background"
             android:contentDescription="Imagen del platillo"
             android:scaleType="centerCrop" />
 
