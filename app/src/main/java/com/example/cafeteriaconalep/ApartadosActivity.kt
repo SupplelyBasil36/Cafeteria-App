@@ -20,7 +20,7 @@ class ApartadosActivity : AppCompatActivity() {
         btnAgregarApartado = findViewById(R.id.btnAgregarApartado)
 
         val adapter = ApartadosAdapter(ApartadosProvider.listaApartados)
-        rvApartados.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        rvApartados.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rvApartados.adapter = adapter
     }
 }
