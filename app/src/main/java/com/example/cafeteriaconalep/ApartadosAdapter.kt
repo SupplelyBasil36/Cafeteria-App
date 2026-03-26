@@ -1,5 +1,7 @@
 package com.example.cafeteriaconalep
 
+import android.app.AlertDialog
+import android.app.Dialog
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -28,8 +30,8 @@ class ApartadosAdapter(private val listaApartados: MutableList<Apartados>) :
 
         p0.apartadoCheck.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                MaterialAlertDialogBuilder(p0.itemView.context)
-                    .setTitle("Eliminar apartado")
+                val build = AlertDialog.Builder(p0.itemView.context)
+                build.setTitle("Eliminar apartado")
                     .setMessage("¿Estás seguro de que deseas eliminar \"${data.nombreApartado}\"?")
                     .setNegativeButton("Cancelar") { dialog, _ ->
                         p0.apartadoCheck.setOnCheckedChangeListener(null)

@@ -1,5 +1,6 @@
 package com.example.cafeteriaconalep
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -47,5 +48,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ApartadosActivity::class.java)
             startActivity(intent)
         }
+
     }
 }

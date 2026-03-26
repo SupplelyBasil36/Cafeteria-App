@@ -1,5 +1,6 @@
 package com.example.cafeteriaconalep
 
+import android.app.Dialog
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -22,5 +23,11 @@ class ApartadosActivity : AppCompatActivity() {
         val adapter = ApartadosAdapter(ApartadosProvider.listaApartados)
         rvApartados.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rvApartados.adapter = adapter
+
+        btnAgregarApartado.setOnClickListener {
+            val dialog = Dialog(this)
+            dialog.setContentView(R.layout.dialog_agregar_apartado)
+            dialog.show()
+        }
     }
 }
