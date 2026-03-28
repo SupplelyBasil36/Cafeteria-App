@@ -3,6 +3,7 @@ package com.example.cafeteriaconalep
 import android.app.Dialog
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -28,6 +29,22 @@ class ApartadosActivity : AppCompatActivity() {
             val dialog = Dialog(this)
             dialog.setContentView(R.layout.dialog_agregar_apartado)
             dialog.show()
+
+            val btnGuardar = dialog.findViewById<Button>(R.id.btnAgrApartado)
+            val apartadoNombre = dialog.findViewById<EditText>(R.id.etAgrNApartado)
+            val apartadoPlatillo = dialog.findViewById<EditText>(R.id.etAgrPlatillo)
+            val lista = ApartadosProvider.listaApartados
+
+            btnGuardar.setOnClickListener {
+                lista.add(
+                    Apartados(apartadoNombre.text.toString(),
+                        apartadoPlatillo.text.toString(),
+                        false)
+                )
+                adapter.notifyDataSetChanged()
+                dialog.hide()
+            }
+
         }
     }
 }

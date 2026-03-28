@@ -1,11 +1,9 @@
 package com.example.cafeteriaconalep
 
 import android.app.AlertDialog
-import android.app.Dialog
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class ApartadosAdapter(private val listaApartados: MutableList<Apartados>) :
     RecyclerView.Adapter<ApartadosViewHolder>() {
