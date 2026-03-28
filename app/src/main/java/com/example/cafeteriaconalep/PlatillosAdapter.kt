@@ -29,4 +29,8 @@ class PlatillosAdapter(private val listaPlatillos: List<Platillos>) :
         val seleccionados = listaPlatillos.filter { it.seleccionado }.map { it.nombrePlatillo }
         return seleccionados
     }
+
+    fun limpiarSeleccionados(){
+        listaPlatillos.forEach { it.seleccionado = false}
+    }
 }
