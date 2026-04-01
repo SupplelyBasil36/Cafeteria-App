@@ -43,7 +43,7 @@ class ApartadosActivity : AppCompatActivity() {
                         false
                     )
                 )
-                adapter.notifyDataSetChanged()
+                adapter.notifyItemInserted(lista.listaApartado.size - 1)
                 dialog.hide()
             }
 

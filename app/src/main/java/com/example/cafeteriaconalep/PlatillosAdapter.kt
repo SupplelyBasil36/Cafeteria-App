@@ -30,7 +30,13 @@ class PlatillosAdapter(private val listaPlatillos: List<Platillos>) :
         return seleccionados
     }
 
-    fun limpiarSeleccionados(){
-        listaPlatillos.forEach { it.seleccionado = false}
+    fun limpiarSeleccionados() {
+        listaPlatillos.forEach { it.seleccionado = false }
+    }
+
+    //Esta funcion se utiliza para tomar el total de los platillos seleccionados
+    fun obtenerTotal(): Int {
+        val seleccionados = listaPlatillos.filter { it.seleccionado }.sumOf { it.precioPlatillo }
+        return seleccionados
     }
 }

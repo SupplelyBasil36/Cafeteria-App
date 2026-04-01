@@ -9,7 +9,7 @@ object ApartadosProvider {
 
     val listaApartado: List<Apartados> get() = listaApartados
 
-    fun agregarApartado(apartado: Apartados){
+    fun agregarApartado(apartado: Apartados) {
         listaApartados.add(apartado)
     }
 }

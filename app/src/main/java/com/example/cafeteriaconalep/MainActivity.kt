@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         imprimirBoton = findViewById(R.id.btnImprimir)
         apartadosBoton = findViewById(R.id.btnApartados)
 
-        val adapter = PlatillosAdapter(PlatillosProvider.listaPlatillos)
+        val adapter = PlatillosAdapter(PlatillosProvider.listaPlatillo)
 
         rvListaPlatillos.layoutManager = LinearLayoutManager(this)
         rvListaPlatillos.adapter = adapter
@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             builder.setMessage("La lista se esta imprimiendo")
             builder.setPositiveButton("Aceptar") { dialog, which ->
                 // Acción al presionar Aceptar (puede estar vacía)
+                println(adapter.obtenerTotal()) //Obtenemos el costo total del ticket
                 adapter.limpiarSeleccionados()
                 adapter.notifyDataSetChanged()
                 dialog.cancel()

@@ -29,17 +29,10 @@
     <Button
         android:id="@+id/btnAgregarApartado"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_gravity="center"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="@color/buttons"
         android:text="Agregar apartado" />
-
-    <Button
-        android:id="@+id/btnVolverInicio"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/buttons"
-        android:text="Volver a inicio" />
 
 </LinearLayout>
