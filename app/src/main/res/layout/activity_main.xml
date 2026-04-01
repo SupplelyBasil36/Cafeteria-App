@@ -17,13 +17,15 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Cafeteria Conalep"
+        android:textColor="@color/fonts"
         android:textSize="32sp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lista menu:"
+        android:text="Lista menú:"
+        android:textColor="@color/fonts"
         android:textSize="26sp" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -39,14 +41,17 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="@color/buttons"
-        android:text="Imprimir ticket" />
+        android:text="Imprimir ticket"
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/btnApartados"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginBottom="25dp"
         android:backgroundTint="@color/buttons"
-        android:text="Apartados" />
+        android:text="Apartados"
+        android:textColor="#ffffff" />
 
 </LinearLayout>

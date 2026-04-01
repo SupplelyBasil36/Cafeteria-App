@@ -3,9 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <!--APP CAFETERIA COLORS-->
-    <color name="background_app">#EBD5AB</color>
-    <color name="background_header">#628141</color>
-    <color name="buttons">#90AB8B</color>
-    <color name="fonts">#FCF9EA</color>
-    <color name="images_background_test">#91C6BC</color>
+    <color name="background_app">#F8F5F2</color>
+    <color name="buttons">#2E7D32</color>
+    <color name="fonts">#2C2C2C</color>
+    <color name="images_background_test">#C4A484</color>
+    <color name="card_background">#FFFFFF</color>  <!-- tarjetas -->
 </resources>

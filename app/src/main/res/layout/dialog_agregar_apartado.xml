@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="250dp"
     android:layout_height="wrap_content"
-    android:background="@color/background_header"
+    android:background="@color/card_background"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -12,12 +12,14 @@
         android:layout_margin="12dp"
         android:text="AGREGAR APARTADO"
         android:textAlignment="center"
+        android:textColor="@color/fonts"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nombre"
+        android:textColor="@color/fonts"
         android:textStyle="bold" />
 
     <EditText
@@ -31,6 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Platillo"
+        android:textColor="@color/fonts"
         android:textStyle="bold" />
 
     <EditText
@@ -44,6 +47,7 @@
         android:id="@+id/btnAgrApartado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Guardar" />
+        android:text="Guardar"
+        android:textColor="#ffffff" />
 
 </LinearLayout>
