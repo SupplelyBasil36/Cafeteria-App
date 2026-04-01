@@ -21,7 +21,7 @@ class ApartadosActivity : AppCompatActivity() {
         rvApartados = findViewById(R.id.rvListaApartados)
         btnAgregarApartado = findViewById(R.id.btnAgregarApartado)
 
-        val adapter = ApartadosAdapter(ApartadosProvider.listaApartados)
+        val adapter = ApartadosAdapter(ApartadosProvider.listaApartado as MutableList<Apartados>)
         rvApartados.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rvApartados.adapter = adapter
 
@@ -33,13 +33,15 @@ class ApartadosActivity : AppCompatActivity() {
             val btnGuardar = dialog.findViewById<Button>(R.id.btnAgrApartado)
             val apartadoNombre = dialog.findViewById<EditText>(R.id.etAgrNApartado)
             val apartadoPlatillo = dialog.findViewById<EditText>(R.id.etAgrPlatillo)
-            val lista = ApartadosProvider.listaApartados
+            val lista = ApartadosProvider
 
             btnGuardar.setOnClickListener {
-                lista.add(
-                    Apartados(apartadoNombre.text.toString(),
+                lista.agregarApartado(
+                    Apartados(
+                        apartadoNombre.text.toString(),
                         apartadoPlatillo.text.toString(),
-                        false)
+                        false
+                    )
                 )
                 adapter.notifyDataSetChanged()
                 dialog.hide()

@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var rvListaPlatillos: RecyclerView
     lateinit var imprimirBoton: Button
     lateinit var apartadosBoton: Button
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
                 // Acción al presionar Aceptar (puede estar vacía)
                 adapter.limpiarSeleccionados()
                 adapter.notifyDataSetChanged()
+                dialog.cancel()
             }
             builder.setNegativeButton("Cancelar") { dialog, which ->
                 // Acción al presionar Cancelar
