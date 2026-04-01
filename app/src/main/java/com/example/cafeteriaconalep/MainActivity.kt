@@ -22,8 +22,9 @@ class MainActivity : AppCompatActivity() {
         rvListaPlatillos = findViewById(R.id.rvListaPlatillos)
         imprimirBoton = findViewById(R.id.btnImprimir)
         apartadosBoton = findViewById(R.id.btnApartados)
+        val listaPLatillos = PlatillosProvider.listaPlatillo
 
-        val adapter = PlatillosAdapter(PlatillosProvider.listaPlatillo)
+        val adapter = PlatillosAdapter(listaPLatillos)
 
         rvListaPlatillos.layoutManager = LinearLayoutManager(this)
         rvListaPlatillos.adapter = adapter
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 // Acción al presionar Aceptar (puede estar vacía)
                 println(adapter.obtenerTotal()) //Obtenemos el costo total del ticket
                 adapter.limpiarSeleccionados()
-                adapter.notifyDataSetChanged()
+                adapter.notifyItemRemoved(listaPLatillos.size - 1)
                 dialog.cancel()
             }
             builder.setNegativeButton("Cancelar") { dialog, which ->
