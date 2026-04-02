@@ -26,17 +26,19 @@ class PlatillosAdapter(private val listaPlatillos: List<Platillos>) :
     }
 
     fun obtenerSeleccionados(): List<String> {
-        val seleccionados = listaPlatillos.filter { it.seleccionado }.map { it.nombrePlatillo }
+        //Retornamos una lista de nombres de platillos donde la cantidad sea mayor a 0, si son ceros no retornar valores
+        val seleccionados = listaPlatillos.filter { it.cantidad > 0 }.map { it.nombrePlatillo }
         return seleccionados
     }
 
     fun limpiarSeleccionados() {
-        listaPlatillos.forEach { it.seleccionado = false }
+        //Restablecemos la cantidad de cada platillo en la lista a cero
+        listaPlatillos.forEach { it.cantidad = 0 }
     }
 
     //Esta funcion se utiliza para tomar el total de los platillos seleccionados
     fun obtenerTotal(): Int {
-        val seleccionados = listaPlatillos.filter { it.seleccionado }.sumOf { it.precioPlatillo }
+        val seleccionados = listaPlatillos.filter { it.cantidad > 0 }.sumOf { it.precioPlatillo }
         return seleccionados
     }
 }
