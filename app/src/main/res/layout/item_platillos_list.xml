@@ -4,8 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
-    android:layout_marginVertical="4dp"
+    android:layout_marginVertical="8dp"
     android:backgroundTint="@color/card_background"
+    android:elevation="2dp"
     app:cardCornerRadius="15dp">
 
     <LinearLayout
@@ -15,13 +16,14 @@
         android:orientation="horizontal"
         android:padding="12dp">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imgPlatillo"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@drawable/ic_launcher_background"
             android:contentDescription="Imagen del platillo"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/RoundedImageView" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -36,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:text="Nombre platillo"
                 android:textColor="@color/fonts"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -43,8 +46,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:textSize="16sp"
                 android:text="Precio platillo"
-                android:textColor="@color/fonts" />
+                android:textColor="@color/buttons" />
         </LinearLayout>
 
         <CheckBox
