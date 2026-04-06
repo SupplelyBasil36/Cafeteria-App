@@ -38,7 +38,7 @@ class PlatillosAdapter(private val listaPlatillos: List<Platillos>) :
 
     //Esta funcion se utiliza para tomar el total de los platillos seleccionados
     fun obtenerTotal(): Int {
-        val seleccionados = listaPlatillos.filter { it.cantidad > 0 }.sumOf { it.precioPlatillo }
+        val seleccionados = listaPlatillos.filter { it.cantidad > 0 }.sumOf { it.precioPlatillo * it.cantidad}
         return seleccionados
     }
 }
