@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
                 // Acción al presionar Aceptar (puede estar vacía)
                 println(adapter.obtenerTotal()) //Obtenemos el costo total del ticket
                 adapter.limpiarSeleccionados()
-                adapter.notifyItemRemoved(listaPLatillos.size - 1)
                 dialog.cancel()
             }
             builder.setNegativeButton("Cancelar") { dialog, which ->

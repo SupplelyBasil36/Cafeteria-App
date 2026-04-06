@@ -21,6 +21,10 @@ class PlatillosViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         precioPlatillo.text = "Precio: $${item.precioPlatillo}"
         cantidadPlatillo.text = item.cantidad.toString()
 
+        // Quitar listeners anteriores antes de asignar nuevos
+        btnMas.setOnClickListener(null)
+        btnMen.setOnClickListener(null)
+
         btnMas.setOnClickListener {
             item.cantidad++
             cantidadPlatillo.text = item.cantidad.toString()
@@ -32,9 +36,10 @@ class PlatillosViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                 cantidadPlatillo.text = item.cantidad.toString()
             }
         }
-        //seleccionadoPlatillo.isChecked = item.seleccionado
-        /*seleccionadoPlatillo.setOnCheckedChangeListener { _, isChecked ->
-            item.seleccionado = isChecked //item.seleccionado es igual a true
-        }*/
     }
+
+    //seleccionadoPlatillo.isChecked = item.seleccionado
+    /*seleccionadoPlatillo.setOnCheckedChangeListener { _, isChecked ->
+        item.seleccionado = isChecked //item.seleccionado es igual a true
+    }*/
 }

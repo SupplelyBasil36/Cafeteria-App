@@ -32,8 +32,8 @@ class PlatillosAdapter(private val listaPlatillos: List<Platillos>) :
     }
 
     fun limpiarSeleccionados() {
-        //Restablecemos la cantidad de cada platillo en la lista a cero
         listaPlatillos.forEach { it.cantidad = 0 }
+        notifyDataSetChanged()
     }
 
     //Esta funcion se utiliza para tomar el total de los platillos seleccionados
