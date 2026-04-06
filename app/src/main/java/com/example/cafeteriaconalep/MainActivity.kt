@@ -19,13 +19,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //VISTAS------------------------------------
         rvListaPlatillos = findViewById(R.id.rvListaPlatillos)
         imprimirBoton = findViewById(R.id.btnImprimir)
         apartadosBoton = findViewById(R.id.btnApartados)
+        //------------------------------------------
+
         val listaPLatillos = PlatillosProvider.listaPlatillo
-
         val adapter = PlatillosAdapter(listaPLatillos)
-
         rvListaPlatillos.layoutManager = LinearLayoutManager(this)
         rvListaPlatillos.adapter = adapter
 
