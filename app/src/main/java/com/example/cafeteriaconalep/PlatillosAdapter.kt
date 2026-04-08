@@ -25,9 +25,10 @@ class PlatillosAdapter(private val listaPlatillos: List<Platillos>) :
         return listaPlatillos.size
     }
 
-    fun obtenerSeleccionados(): List<String> {
+    fun obtenerSeleccionados(): List<Platillos> {
         //Retornamos una lista de nombres de platillos donde la cantidad sea mayor a 0, si son ceros no retornar valores
-        val seleccionados = listaPlatillos.filter { it.cantidad > 0 }.map { it.nombrePlatillo }
+        //val seleccionados = listaPlatillos.filter { it.cantidad > 0 }.map { it.nombrePlatillo }
+        val seleccionados = listaPlatillos.filter { it.cantidad > 0 }
         return seleccionados
     }
 

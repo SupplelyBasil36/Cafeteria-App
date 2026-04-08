@@ -32,8 +32,43 @@ class MainActivity : AppCompatActivity() {
 
         imprimirBoton.setOnClickListener {
             val datos = adapter.obtenerSeleccionados()
+            val total = adapter.obtenerTotal() //Obtenemos el costo total del ticket
+
             println(datos)
-            val builder = AlertDialog.Builder(this)
+            // Convertir los platillos a líneas de texto para el ticket
+            val lineas = datos.map { platillo ->
+                "${platillo.nombrePlatillo}  x${platillo.cantidad}  $${platillo.precioPlatillo}"
+            }
+
+            // Imprimir en hilo secundario para no bloquear la UI
+            Thread {
+                val exito = ImpresoraBluetooth.imprimir(
+                    context = this,
+                    nombreImpresora = "BlueDreamer", // parte del nombre del dispositivo BT
+                    lineas = lineas,
+                    total = total
+                )
+
+                runOnUiThread {
+                    val builder = AlertDialog.Builder(this)
+                    builder.setTitle("Imprimir")
+                    builder.setMessage(
+                        if (exito) "La lista se está imprimiendo ✅"
+                        else "❌ No se pudo conectar a la impresora. ¿Está encendida y emparejada?"
+                    )
+                    builder.setPositiveButton("Aceptar") { dialog, _ ->
+                        if (exito) {
+                            adapter.limpiarSeleccionados()
+                            adapter.notifyDataSetChanged()
+                        }
+                        dialog.cancel()
+                    }
+                    builder.show()
+                }
+            }.start()
+
+
+            /*val builder = AlertDialog.Builder(this)
             builder.setTitle("Imprimir")
             builder.setMessage("La lista se esta imprimiendo")
             builder.setPositiveButton("Aceptar") { dialog, which ->
@@ -45,7 +80,7 @@ class MainActivity : AppCompatActivity() {
             builder.setNegativeButton("Cancelar") { dialog, which ->
                 // Acción al presionar Cancelar
             }
-            builder.show()
+            builder.show()*/
             //Esto funciona para agregar un platillo a la lista
             //PlatillosProvider.listaPlatillos.add(Platillos("Agregado extra", 55, false))
             //adapter.notifyDataSetChanged()
