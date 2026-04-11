@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
-        android:text="AGREGAR APARTADO"
+        android:text="@string/txt_titulo_dialog"
         android:textAlignment="center"
         android:textColor="@color/fonts"
         android:textStyle="bold" />
@@ -32,7 +32,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Platillo"
+        android:text="@string/txt_platillo_dialog"
         android:textColor="@color/fonts"
         android:textStyle="bold" />
 
@@ -47,7 +47,7 @@
         android:id="@+id/btnAgrApartado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Guardar"
+        android:text="@string/txt_btn_dialog"
         android:textColor="#ffffff" />
 
 </LinearLayout>

@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Cafeteria Conalep"
+        android:text="@string/txt_titulo_app"
         android:textColor="@color/fonts"
         android:textSize="32sp"
         android:textStyle="bold" />
@@ -24,7 +24,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lista menú:"
+        android:text="@string/txt_lista_menu"
         android:textColor="@color/fonts"
         android:textSize="26sp" />
 
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="@color/buttons"
-        android:text="Imprimir ticket"
+        android:text="@string/txt_imprimir_ticket"
         android:textColor="#ffffff" />
 
     <Button
@@ -51,7 +51,7 @@
         android:layout_gravity="center"
         android:layout_marginBottom="25dp"
         android:backgroundTint="@color/buttons"
-        android:text="Apartados"
+        android:text="@string/txt_seccion_apartados"
         android:textColor="#ffffff" />
 
 </LinearLayout>

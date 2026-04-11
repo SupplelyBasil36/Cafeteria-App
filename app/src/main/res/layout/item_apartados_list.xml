@@ -10,8 +10,7 @@
     app:cardCornerRadius="10dp"
     app:cardElevation="5dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp">
@@ -20,7 +19,7 @@
             android:id="@+id/txtNombreApartado"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Nombre de Persona"
+            android:text="@string/txt_nombre_de_persona"
             android:textColor="@color/fonts"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@id/chkApartadoSelect"
@@ -31,7 +30,7 @@
             android:id="@+id/txtPlatillo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Platillo"
+            android:text="@string/txt_platillo"
             android:textColor="@color/fonts"
             app:layout_constraintEnd_toStartOf="@id/chkApartadoSelect"
             app:layout_constraintStart_toStartOf="@id/txtNombreApartado"

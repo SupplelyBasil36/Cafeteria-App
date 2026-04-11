@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">Cafeteria Conalep</string>
     <!--APP CAFETERIA COLORS-->
+    <!--APP CAFETERIA SECCION MAIN-->
+    <string name="txt_titulo_app">Cafetería Conalep</string>
+    <string name="txt_lista_menu">Menú:</string>
+    <string name="txt_imprimir_ticket">Imprimir ticket</string>
+    <string name="txt_seccion_apartados">Ir a Apartados</string>
+    <!--APP CAFETERIA DIALOG-->
+    <string name="txt_titulo_dialog">Agregar apartado</string>"
+    <string name="txt_nombre_dialog">Nombre alumno/alumna:</string>
+    <string name="txt_platillo_dialog">Platillo:</string>
+    <string name="txt_btn_dialog">Guardar apartado</string>
+    <!--APP CAFETERIA SECCION APARTADOS-->
+    <string name="txt_lista_apartados">Lista de apartados:</string>
+    <string name="txt_agregar_apartado">Agregar apartado</string>
+    <string name="txt_nombre_de_persona">Nombre de Persona</string>
+    <string name="txt_platillo">Platillo</string>
 </resources>
