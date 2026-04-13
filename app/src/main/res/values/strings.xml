@@ -2,7 +2,7 @@
     <string name="app_name">Cafeteria Conalep</string>
     <!--APP CAFETERIA COLORS-->
     <!--APP CAFETERIA SECCION MAIN-->
-    <string name="txt_titulo_app">Cafetería Conalep</string>
+    <string name="txt_titulo_app">Mi Cafetería</string>
     <string name="txt_lista_menu">Menú:</string>
     <string name="txt_imprimir_ticket">Imprimir ticket</string>
     <string name="txt_seccion_apartados">Ir a Apartados</string>

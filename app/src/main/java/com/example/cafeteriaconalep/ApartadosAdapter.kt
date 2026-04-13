@@ -25,7 +25,8 @@ class ApartadosAdapter(private val listaApartados: MutableList<Apartados>) :
 
         p0.nombreApartado.text = data.nombreApartado
         p0.descPlatillo.text = data.nombrePlatilloApartado
-        p0.apartadoCheck.isChecked = data.seleccionado //Siempre llega false por la forma que lo declaramos en el provider
+        p0.apartadoCheck.isChecked =
+            data.seleccionado //Siempre llega false por la forma que lo declaramos en el provider
 
         p0.apartadoCheck.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
@@ -39,7 +40,8 @@ class ApartadosAdapter(private val listaApartados: MutableList<Apartados>) :
                         dialog.dismiss()
                     }
                     .setPositiveButton("Sí, eliminar") { _, _ ->
-                        val posicionActual = p0.bindingAdapterPosition //Returns the Adapter position of the item represented by this ViewHolder with respect to the RecyclerView.Adapter that bound it.
+                        val posicionActual =
+                            p0.bindingAdapterPosition //Returns the Adapter position of the item represented by this ViewHolder with respect to the RecyclerView.Adapter that bound it.
                         if (posicionActual != RecyclerView.NO_ID.toInt()) {
                             listaApartados.removeAt(posicionActual)
                             notifyItemRemoved(posicionActual)

@@ -15,9 +15,15 @@ object ImpresoraBluetooth {
 
     // UUID estándar para SPP (Serial Port Profile) - funciona con la mayoría de impresoras BT
     private val UUID_SPP: UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")
-    fun imprimir(context: Context, nombreImpresora: String, lineas: List<String>, total: Int): Boolean {
+    fun imprimir(
+        context: Context,
+        nombreImpresora: String,
+        lineas: List<String>,
+        total: Int
+    ): Boolean {
 
-        val bluetoothManager: BluetoothManager = context.getSystemService(BluetoothManager::class.java)
+        val bluetoothManager: BluetoothManager =
+            context.getSystemService(BluetoothManager::class.java)
         val bluetooth: BluetoothAdapter? = bluetoothManager.getAdapter()
 
         // Verificar permiso antes de continuar
@@ -53,33 +59,30 @@ object ImpresoraBluetooth {
     }
 
     private fun buildTicket(lineas: List<String>, total: Int): ByteArray {
-        val sb = StringBuilder()
+        val init    = byteArrayOf(0x1B, 0x40) // inicializar
+        val centrar  = byteArrayOf(0x1B, 0x61, 0x01) // centrar
+        val izquierda = byteArrayOf(0x1B, 0x61, 0x00) // izquierda
 
-        // Inicializar impresora (ESC @)
-        val init = byteArrayOf(0x1B, 0x40)
+        val header = StringBuilder()
+        header.append("========================\n")
+        header.append("       MI CAFETERIA     \n")
+        header.append("========================\n\n")
 
-        // Centrar texto (ESC a 1)
-        val centrar = byteArrayOf(0x1B, 0x61, 0x01)
-        // Alinear izquierda (ESC a 0)
-        val izquierda = byteArrayOf(0x1B, 0x61, 0x00)
-
-        sb.append("========================\n")
-        sb.append("       MI RESTAURANTE   \n")
-        sb.append("========================\n")
-        sb.append("\n")
-
+        val cuerpo = StringBuilder()
         lineas.forEach { linea ->
-            sb.append("$linea\n")
+            cuerpo.append("$linea\n")
         }
+        cuerpo.append("------------------------\n")
+        cuerpo.append("TOTAL: $${"%.2f".format(total.toDouble())}\n")
+        cuerpo.append("========================\n")
+        cuerpo.append("\n\n\n")
 
-        sb.append("------------------------\n")
-        sb.append("TOTAL: $${"%.2f".format(total)}\n")
-        sb.append("========================\n")
-        sb.append("\n\n\n") // líneas de corte/avance
-
-        // Corte de papel (si la impresora lo soporta): GS V 66 0
         val corte = byteArrayOf(0x1D, 0x56, 0x42, 0x00)
 
-        return init + centrar + sb.toString().toByteArray(Charsets.UTF_8) + corte
+        // Header centrado, cuerpo alineado a la izquierda
+        return init +
+                centrar + header.toString().toByteArray(Charsets.UTF_8) +
+                izquierda + cuerpo.toString().toByteArray(Charsets.UTF_8) +
+                corte
     }
 }
