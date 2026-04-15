@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_app"
+        android:gravity="center"
         android:orientation="vertical"
         android:paddingLeft="16dp"
         android:paddingTop="30dp"
@@ -18,23 +19,25 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            app:title="Mi Cafetería"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/buttons" />
+            android:background="@color/buttons">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Mi Cafetería"
+                android:textColor="@color/black"
+                android:textSize="28sp" />
+
+        </androidx.appcompat.widget.Toolbar>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/txt_titulo_app"
-            android:textColor="@color/fonts"
-            android:textSize="32sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:text="@string/txt_lista_menu"
             android:textColor="@color/fonts"
             android:textSize="26sp" />
@@ -49,20 +52,11 @@
         <Button
             android:id="@+id/btnImprimir"
             android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_height="70dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="50dp"
             android:backgroundTint="@color/buttons"
             android:text="@string/txt_imprimir_ticket"
-            android:textColor="#ffffff" />
-
-        <Button
-            android:id="@+id/btnApartados"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="25dp"
-            android:backgroundTint="@color/buttons"
-            android:text="@string/txt_seccion_apartados"
             android:textColor="#ffffff" />
 
     </LinearLayout>
