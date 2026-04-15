@@ -16,4 +16,7 @@
     <string name="txt_agregar_apartado">Agregar apartado</string>
     <string name="txt_nombre_de_persona">Nombre de Persona</string>
     <string name="txt_platillo">Platillo</string>
+
+    <string name="navigation_drawer_open">Abrir menú</string>
+    <string name="navigation_drawer_close">Cerrar menú</string>
 </resources>

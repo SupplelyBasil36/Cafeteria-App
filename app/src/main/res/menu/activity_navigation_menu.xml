@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_inicio"
+        android:title="Inicio" />
+
+    <item
+        android:id="@+id/nav_apartados"
+        android:title="Apartados" />
+
+    <item
+        android:id="@+id/nav_corte"
+        android:title="Corte de ventas" />
+
+</menu>

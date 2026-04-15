@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <!--PERMISOS BLUETOOTH PARA LA APLICACION-->
+    <!-- PERMISOS BLUETOOTH PARA LA APLICACION -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
@@ -16,6 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CafeteriaConalep">
+        <activity
+            android:name=".CorteVentasActivity"
+            android:exported="false" />
         <activity
             android:name=".ApartadosActivity"
             android:exported="false" />
