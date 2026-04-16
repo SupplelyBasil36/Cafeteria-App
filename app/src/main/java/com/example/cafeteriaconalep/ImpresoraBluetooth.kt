@@ -19,7 +19,7 @@ object ImpresoraBluetooth {
         context: Context,
         nombreImpresora: String,
         lineas: List<String>,
-        total: Int
+        total: Double
     ): Boolean {
 
         val bluetoothManager: BluetoothManager =
@@ -58,9 +58,9 @@ object ImpresoraBluetooth {
         }
     }
 
-    private fun buildTicket(lineas: List<String>, total: Int): ByteArray {
-        val init    = byteArrayOf(0x1B, 0x40) // inicializar
-        val centrar  = byteArrayOf(0x1B, 0x61, 0x01) // centrar
+    private fun buildTicket(lineas: List<String>, total: Double): ByteArray {
+        val init = byteArrayOf(0x1B, 0x40) // inicializar
+        val centrar = byteArrayOf(0x1B, 0x61, 0x01) // centrar
         val izquierda = byteArrayOf(0x1B, 0x61, 0x00) // izquierda
 
         val header = StringBuilder()

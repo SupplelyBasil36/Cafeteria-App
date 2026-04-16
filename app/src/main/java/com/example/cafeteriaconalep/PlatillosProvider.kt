@@ -1,6 +1,7 @@
 package com.example.cafeteriaconalep
 
 object PlatillosProvider {
+    var totalDelDia: Double = 0.0
     private val listaPlatillos = mutableListOf(
         Platillos("Hamburguesa", 40, 0),
         Platillos("Hot Dog", 25, 0),

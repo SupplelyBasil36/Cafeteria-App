@@ -6,7 +6,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
-import android.widget.EditText
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -68,14 +67,45 @@ class MainActivity : AppCompatActivity() {
                     val dialog = Dialog(this)
                     dialog.setContentView(R.layout.activity_corte_ventas)
                     dialog.show()
-                    val btnCorte = dialog.findViewById<Button>(R.id.btnGenerarCorte)
 
+                    val btnCorte = dialog.findViewById<Button>(R.id.btnGenerarCorte)
                     btnCorte.setOnClickListener {
                         val alertDialogCorte = AlertDialog.Builder(this)
                         alertDialogCorte.setTitle("Generando corte")
-                        alertDialogCorte.setMessage("Se eliminará el total anterior, ¿Desea continuar?")
-                        alertDialogCorte.setPositiveButton("Aceptar") { dialog, _ ->
-                            dialog.cancel()
+                        alertDialogCorte.setMessage("¿Desea imprimir el corte y reiniciar el total?")
+                        alertDialogCorte.setPositiveButton("Aceptar") { d, _ ->
+
+                            // Armar las líneas del ticket de corte
+                            val lineasCorte = listOf(
+                                "Corte de ventas del dia",
+                                "Fecha: ${
+                                    java.text.SimpleDateFormat(
+                                        "dd/MM/yyyy HH:mm",
+                                        java.util.Locale.getDefault()
+                                    ).format(java.util.Date())
+                                }"
+                            )
+
+                            // Imprimir en hilo secundario
+                            Thread {
+                                val exito = ImpresoraBluetooth.imprimir(
+                                    context = this,
+                                    nombreImpresora = "BlueTooth Printer",
+                                    lineas = lineasCorte,
+                                    total = PlatillosProvider.totalDelDia
+                                )
+
+                                runOnUiThread {
+                                    if (exito) {
+                                        PlatillosProvider.totalDelDia =
+                                            0.0 // resetea después de imprimir
+                                    }
+                                }
+                            }.start()
+                            d.cancel()
+                        }
+                        alertDialogCorte.setNegativeButton("Cancelar") { d, _ ->
+                            d.cancel()
                         }
                         alertDialogCorte.show()
                     }
@@ -130,6 +160,7 @@ class MainActivity : AppCompatActivity() {
                     )
                     builder.setPositiveButton("Aceptar") { dialog, _ ->
                         if (exito) {
+                            PlatillosProvider.totalDelDia += total
                             adapter.limpiarSeleccionados()
                             adapter.notifyDataSetChanged()
                         }
