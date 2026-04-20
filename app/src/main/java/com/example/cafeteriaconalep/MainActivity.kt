@@ -1,11 +1,11 @@
 package com.example.cafeteriaconalep
 
-import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -69,6 +69,10 @@ class MainActivity : AppCompatActivity() {
                     dialog.show()
 
                     val btnCorte = dialog.findViewById<Button>(R.id.btnGenerarCorte)
+                    val txtTotalCorteDia = dialog.findViewById<TextView>(R.id.txtMostrarTotalDia)
+
+                    txtTotalCorteDia.text = "El total del día actual es: $${adapter.obtenerTotal()}"
+
                     btnCorte.setOnClickListener {
                         val alertDialogCorte = AlertDialog.Builder(this)
                         alertDialogCorte.setTitle("Generando corte")
@@ -97,8 +101,7 @@ class MainActivity : AppCompatActivity() {
 
                                 runOnUiThread {
                                     if (exito) {
-                                        PlatillosProvider.totalDelDia =
-                                            0.0 // resetea después de imprimir
+                                        PlatillosProvider.resetearTotal() // resetea después de imprimir
                                     }
                                 }
                             }.start()
@@ -114,8 +117,6 @@ class MainActivity : AppCompatActivity() {
             drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
-
-
 
         imprimirBoton.setOnClickListener {
             val datos = adapter.obtenerSeleccionados()
@@ -160,7 +161,7 @@ class MainActivity : AppCompatActivity() {
                     )
                     builder.setPositiveButton("Aceptar") { dialog, _ ->
                         if (exito) {
-                            PlatillosProvider.totalDelDia += total
+                            PlatillosProvider.acumularTotal(total)
                             adapter.limpiarSeleccionados()
                             adapter.notifyDataSetChanged()
                         }

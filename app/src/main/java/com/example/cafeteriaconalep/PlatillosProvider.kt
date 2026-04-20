@@ -1,7 +1,9 @@
 package com.example.cafeteriaconalep
 
 object PlatillosProvider {
-    var totalDelDia: Double = 0.0
+    private var _totalDelDia: Double = 0.0
+    val totalDelDia: Double get() = _totalDelDia
+
     private val listaPlatillos = mutableListOf(
         Platillos("Hamburguesa", 40, 0),
         Platillos("Hot Dog", 25, 0),
@@ -21,4 +23,11 @@ object PlatillosProvider {
     )
 
     val listaPlatillo: List<Platillos> get() = listaPlatillos
+    fun acumularTotal(monto: Double) {
+        _totalDelDia += monto
+    }
+
+    fun resetearTotal() {
+        _totalDelDia = 0.0
+    }
 }
