@@ -162,7 +162,7 @@ class MainActivity : AppCompatActivity() {
                     builder.setPositiveButton("Aceptar") { dialog, _ ->
                         if (exito) {
                             PlatillosProvider.acumularTotal(total)
-                            adapter.limpiarSeleccionados()
+
                             adapter.notifyDataSetChanged()
                         }
                         dialog.cancel()
@@ -170,7 +170,8 @@ class MainActivity : AppCompatActivity() {
                     builder.show()
                 }
             }.start()
-
+            println(lineas)
+            adapter.limpiarSeleccionados()
         }
 
     }
